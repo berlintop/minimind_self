@@ -102,7 +102,7 @@ def main():
     parser.add_argument('--out_dir', default='out', type=str)
     parser.add_argument('--temperature', default=0.85, type=float)
     parser.add_argument('--top_p', default=0.85, type=float)
-    parser.add_argument('--device', default='cuda' if torch.cuda.is_available() else 'cpu', type=str)
+    parser.add_argument('--device', default='cuda:8' if torch.cuda.is_available() else 'cpu', type=str)
     # 此处max_seq_len（最大输出长度）并不意味模型具有对应的长文本的性能，仅防止QA出现被截断的问题
     # MiniMind2-moe (145M)：(hidden_size=640, num_hidden_layers=8, use_moe=True)
     # MiniMind2-Small (26M)：(hidden_size=512, num_hidden_layers=8)
